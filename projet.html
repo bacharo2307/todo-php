@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <title>To-Do List</title>
+  <link rel="stylesheet" href="mon.css">
+
+  </head>
+<body>
+  <h1>MA LISTE DE TACHE</h1>
+
+  <form id="ajout">
+    <input type="text" id="tache" placeholder="Entrez une tâche" required>
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <div id="liste">Chargement...</div>
+
+   <div class="mes_boutons">
+    <button onclick="exporterTaches()">Exporter</button>
+    <button onclick="supprimerToutesTaches()">Vider</button>
+    <button onclick="importerTaches()">Charger</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

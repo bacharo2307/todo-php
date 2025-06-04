@@ -1,0 +1,110 @@
+/* Style cinéma clair avec petits boutons et brillance réduite */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(135deg, #e0d4b7, #f7f3ea);
+  color: #4a2c00;
+  padding: 40px;
+  text-align: center;
+  min-height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/pw-maze-white.png');
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3em;
+  color: #d2691e;
+  text-shadow: 1px 1px 6px #ffa50066;  /* moins de brillance */
+  animation: boom 2s infinite alternate;
+  margin-bottom: 30px;
+}
+
+@keyframes boom {
+  0% { transform: scale(1); text-shadow: 1px 1px 6px #ffa50066; }
+  100% { transform: scale(1.03); text-shadow: 0 0 10px #ff8c0044, 0 0 15px #ff450033; }
+}
+
+form {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #d2691e;
+  font-size: 1em;
+  width: 260px;
+  background-color: #fff8dc;
+  color: #4a2c00;
+  box-shadow: 0 0 6px #ffa50066;
+}
+
+button {
+  padding: 4px 10px;       /* boutons très petits */
+  background: #ff8c00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 0 6px #ff8c0044;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ff450033;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  top: -50%;
+  left: -10%;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+button:hover::after {
+  top: -20%;
+  left: 100%;
+}
+
+#liste {
+  margin-top: 30px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #fff3e0;
+  color: #4a2c00;
+  font-size: 1.1em;
+  box-shadow: inset 0 0 10px #ffcc0033;
+}
+
+.mes_boutons {
+  margin-top: 25px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+  input,
+  button {
+    width: 90%;
+  }
+}
